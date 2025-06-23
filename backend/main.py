@@ -3,15 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Dict, Any, Optional
 import uvicorn   
-import os
 import secrets
 import requests
-from dotenv import load_dotenv
+from keys import WEATHERSTACK_API_KEY
 
 app = FastAPI(title="Weather Data System", version="1.0.0")
-
-load_dotenv()
-WEATHERSTACK_API_KEY = os.environ.get("WEATHERSTACK_API_KEY") # Get API key from the .env in the backend directory
 
 app.add_middleware(
     CORSMiddleware,
@@ -44,10 +40,10 @@ async def create_weather_request(request: WeatherRequest):
     
     # First did some error handling below for validaing input and if the API key is set 
     if not WEATHERSTACK_API_KEY:
-        raise HTTPException(status_code=500, detail="WeatherStack API key not configured") 
+        raise HTTPException(status_code=500, detail="WeatherStack API key is wrong") 
 
     if not request.date or not request.location:
-        raise HTTPException(status_code=400, detail="Missing date/location in request") 
+        raise HTTPException(status_code=400, detail="Mssing date/location in form response") 
     
     #Code below calls the API and error handles accordingly 
     api_params = {
