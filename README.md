@@ -1,5 +1,10 @@
 # Lynkr Technical Assessment
 
+## COMMENTS FROM TAKEHOME 
+
+To run the project make a .env file in the backend folder
+Make the 
+
 ## Overview
 
 Build a weather data system where users can submit weather requests and retrieve stored results by ID.
