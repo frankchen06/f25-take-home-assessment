@@ -2,8 +2,13 @@
 
 ## COMMENTS FROM TAKEHOME 
 
-To run the project make a .env file in the backend folder
-Make the 
+To run this project put the weatherstack api key in keys.py file in backend/keys.py 
+
+BONUS Features: 
+- Added dynamic emojis, background, and text colour based on weather conditions 
+- Added a feature to clear the lookup weather data
+- Added a conversion function to allow users to see temperature in Celsius or Fahrenheit
+
 
 ## Overview
 
